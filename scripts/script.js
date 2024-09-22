@@ -1,27 +1,43 @@
 const container = document.querySelector("#container");
 const btn = document.querySelector("button");
-let sides = 16;
+let sides = 4;
 
 // create the divs
 function createSquares(sides) {
+    // clear pre-existing squares
     container.innerHTML = '';
 
-    let totalDivs = sides * sides;
-    let containerSize = container.clientWidth;
-    let squareSize = containerSize / sides;
-
-    for (let i = 0; i < totalDivs; i++) {
-        const div = document.createElement("div");
-        div.classList.add("divs");
-        div.style.width = `${squareSize}px`;
-        div.style.height = `${squareSize}px`;
-        container.appendChild(div);
+    // create sides * rows
+    for (let i = 0; i < sides; i++) {
+        const row = document.createElement("div");
+        row.classList.add("rows");
+        container.appendChild(row);
     }
 
-    // create the nodeList
-    const divs = container.querySelectorAll(".divs");
+    // fill rows with sides * squares
+    const rows = container.querySelectorAll(".rows");
+    rows.forEach(element => {
+        for (let i = 0; i < sides; i++) {
+            const square = document.createElement("div");
+            square.classList.add("squares");
+            element.appendChild(square);
+        }
+    })
 
-    // change color on mouseover
+    // let totalDivs = sides * sides;
+    // let containerSize = container.clientWidth;
+    // let squareSize = containerSize / sides;
+
+    // for (let i = 0; i < totalDivs; i++) {
+    //     const div = document.createElement("div");
+    //     div.classList.add("divs");
+    //     div.style.width = `${squareSize}px`;
+    //     div.style.height = `${squareSize}px`;
+    //     container.appendChild(div);
+    // }
+
+    // draw them red squares
+    const divs = container.querySelectorAll(".squares");
     divs.forEach(element => element.addEventListener("mouseover", (e) => {
         e.target.style.backgroundColor = "red";
     }));
