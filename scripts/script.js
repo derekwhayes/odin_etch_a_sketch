@@ -3,6 +3,11 @@ const setSquaresBtn = document.querySelector("#setSquares-btn");
 const clearBtn = document.querySelector("#clear-btn");
 let sides = 16;
 
+// get random number for rgb values
+function getRandomRGB() {
+    return Math.floor(Math.random() * 257);
+}
+
 // create the divs
 function createSquares(sides) {
     // clear pre-existing squares
@@ -28,7 +33,7 @@ function createSquares(sides) {
     // draw them red squares
     const divs = container.querySelectorAll(".squares");
     divs.forEach(element => element.addEventListener("mouseover", (e) => {
-        e.target.style.backgroundColor = "red";
+        e.target.style.backgroundColor = `rgb(${getRandomRGB()}, ${getRandomRGB()}, ${getRandomRGB()})`;
     }));
     divs.forEach(element => element.addEventListener("touchmove", (e) => {
         e.target.style.backgroundColor = "red";
