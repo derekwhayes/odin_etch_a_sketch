@@ -49,6 +49,8 @@ body {
     height: 80vh;
     box-sizing: border-box;
     flex-direction: column;
+    background-color: rgba(0, 0, 0, 1);
+    background-color: black;
 }
 
 .rows {
@@ -58,7 +60,7 @@ body {
 }
 
 .squares {
-    background-color: rgb(225, 224, 224);
+    
     box-sizing: border-box;
     flex: 1 0 auto;
 }

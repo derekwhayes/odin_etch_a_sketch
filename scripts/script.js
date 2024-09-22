@@ -33,10 +33,13 @@ function createSquares(sides) {
     // draw them red squares
     const divs = container.querySelectorAll(".squares");
     divs.forEach(element => element.addEventListener("mouseover", (e) => {
-        e.target.style.backgroundColor = `rgb(${getRandomRGB()}, ${getRandomRGB()}, ${getRandomRGB()})`;
-    }));
-    divs.forEach(element => element.addEventListener("touchmove", (e) => {
-        e.target.style.backgroundColor = "red";
+        console.log(window.getComputedStyle(element).getPropertyValue("background-color"));
+        if (window.getComputedStyle(element).getPropertyValue("background-color") === "rgba(0, 0, 0, 0)") {
+            e.target.style.backgroundColor = `rgb(${getRandomRGB()}, ${getRandomRGB()}, ${getRandomRGB()})`;
+        }
+        if (window.getComputedStyle(element).getPropertyValue("background-color") !== "rgba(0, 0, 0, 0)") {
+            e.target.style.opacity = window.getComputedStyle(element).getPropertyValue("opacity") - .1;
+        }
     }));
 }
 
