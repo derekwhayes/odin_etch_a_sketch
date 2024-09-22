@@ -47,6 +47,13 @@ createSquares(sides);
 
 // get user input
 btn.addEventListener("click", (e) => {
-    sides = prompt("How many squares per side would you like?", sides);
-    createSquares(sides);
+    sides = prompt("How many squares per side would you like? (0 - 100)", sides);
+
+    if (sides <= 100 && sides > 0) {
+        createSquares(sides);
+    }
+    else {
+        sides = 16;
+        alert("Please select between 0 - 100 squares.")
+    }
 });
