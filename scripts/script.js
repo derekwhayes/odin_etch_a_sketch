@@ -30,6 +30,9 @@ function createSquares(sides) {
     divs.forEach(element => element.addEventListener("mouseover", (e) => {
         e.target.style.backgroundColor = "red";
     }));
+    divs.forEach(element => element.addEventListener("touchmove", (e) => {
+        e.target.style.backgroundColor = "red";
+    }));
 }
 
 createSquares(sides);
