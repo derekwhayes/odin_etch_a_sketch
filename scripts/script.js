@@ -1,6 +1,6 @@
 const container = document.querySelector("#container");
 const btn = document.querySelector("button");
-let sides = 4;
+let sides = 16;
 
 // create the divs
 function createSquares(sides) {
