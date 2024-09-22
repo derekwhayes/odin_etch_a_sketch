@@ -49,5 +49,5 @@ setSquaresBtn.addEventListener("click", (e) => {
 
 // clear canvas
 clearBtn.addEventListener("click", () => {
-    container.innerHTML = "";
+    createSquares(sides);
 });

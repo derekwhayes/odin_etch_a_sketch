@@ -1,10 +1,15 @@
+* {
+    font-family: monospace;
+}
+
 html {
-    min-height: 100%;
+    height: 100vh;
 }
 
 body {
     display: flex;
     height: 100%;
+    margin: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -14,7 +19,8 @@ body {
 
 #btns {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 5rem;
     align-items: center;
     width: 80%;
     margin-top: 1.5rem;
@@ -26,8 +32,13 @@ body {
     border: none;
     border-radius: 5px;
     padding: 0.5rem;
-    width: 10rem;
+    width: 13rem;
     box-shadow: 0 3px 3px;
+}
+
+#setSquares-btn:active,
+#clear-btn:active {
+    box-shadow: none;
 }
 
 #container {
